@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Messenger.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Messenger"
+             mc:Ignorable="d"
+             MaxHeight="250">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/TextBlockDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/CheckBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/ButtonDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Border BorderBrush="Black"
+            BorderThickness="1"
+            Width="500"
+            Height="250">
+        <Grid Background="#303136">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Настройки" Style="{StaticResource PrimaryTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <CheckBox Grid.Row="1" Margin="50 0 0 0" IsChecked="{Binding CurrentUser.Settings.Notice}" HorizontalAlignment="Left" Style="{StaticResource CheckBoxStyle}" Content="Уведомления" VerticalAlignment="Center"/>
+            <Button x:Name="EditBtn" Grid.Row="5" Content="Сохранить" Command="{Binding SaveChangesCommand}"  Width="150" VerticalAlignment="Top" Height="30" Style="{StaticResource ButtonBlueBackStyle}"/>
+        </Grid>
+    </Border>
+
+</UserControl>

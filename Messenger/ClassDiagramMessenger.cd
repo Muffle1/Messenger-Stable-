@@ -1,0 +1,914 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Messenger.RelayCommand">
+    <Position X="76.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQCAAACAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Messenger.BoundPasswordBox">
+    <Position X="76.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAEAAAAABAAAAEgAAAAQAAEAACAAAA=</HashCode>
+      <FileName>Components\BoundPasswordBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AccountViewModel">
+    <Position X="29.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAgAAAAAgAAAAAABAAAAAAAAAIAJBACAABA=</HashCode>
+      <FileName>ViewModels\AccountViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AddChannelViewModel">
+    <Position X="25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQABAAIIAAAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\AddChannelViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AddServerViewModel">
+    <Position X="25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAICAQAAAAgAAAAAAAAAAAAAAAAAABAAAAAAAgAAAAg=</HashCode>
+      <FileName>ViewModels\AddServerViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AuthenticationViewModel">
+    <Position X="27" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAAAI=</HashCode>
+      <FileName>ViewModels\AuthenticationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AuthorizationViewModel">
+    <Position X="31.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAQAAEAAACAAAAAAAAAAAAIAAAAAABAAAIA=</HashCode>
+      <FileName>ViewModels\AuthorizationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.BaseViewModel">
+    <Position X="33.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAACAACgAAAAAAAAAAABAAAABA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Messenger.ChatCreateViewModel">
+    <Position X="35.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAIAIAAAAAAAAAAAAAAAACAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ChatCreateViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ChatManagementViewModel">
+    <Position X="39.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAEQIAIAAACAAAAAgAAACAAAAAAggQAAAhAAAABA=</HashCode>
+      <FileName>ViewModels\ChatManagementViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ChatServerViewModel">
+    <Position X="39" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAgAAAAAAAAAAAAAAAAAWAAABAAAAAABAAACBA=</HashCode>
+      <FileName>ViewModels\ChatServerViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ChatsListViewModel">
+    <Position X="41.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAEQAAAAJKAQACABAEABABQAACAAAGAAiiAEBCBAABA=</HashCode>
+      <FileName>ViewModels\ChatsListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ChatViewModel">
+    <Position X="20.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JwBCQAAAIoAAACIAAGAACBAAIAAAAAQAFAAAJwAAIBA=</HashCode>
+      <FileName>ViewModels\ChatViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ErrorViewModel">
+    <Position X="27" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAEAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>ViewModels\ErrorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.FriendsViewModel">
+    <Position X="29.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAASAgABAgAACQAAEAgAAAAAAAAIAAAAgAQBEBAABA=</HashCode>
+      <FileName>ViewModels\FriendsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.LeftViewModel">
+    <Position X="32" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAIAAIIAAACAAAEBCBAAAIUIAAQAAKABABAAAADA=</HashCode>
+      <FileName>ViewModels\LeftViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.MainViewModel">
+    <Position X="37" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAEAoAAMAUCAAAAEgAAgAAAEAEAQAQAgGAJIiEABA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.MainWindowViewModel">
+    <Position X="37.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAQAAAQQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.MyAccountViewModel">
+    <Position X="41.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAQSAAAAsAAQAAAAEAEAACQAAAAAARACIAABAAAABA=</HashCode>
+      <FileName>ViewModels\MyAccountViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.RegistrationViewModel">
+    <Position X="20.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAQAAAAAAACAAAEAAAAAIAAAAAIAAAQAAgIAgAAIA=</HashCode>
+      <FileName>ViewModels\RegistrationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ServerAddRoleToUserViewModel">
+    <Position X="43.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAACAIAMAQAAACQAAAAEAAAQAAAJAAAAAABSCABBA=</HashCode>
+      <FileName>ViewModels\ServerAddRoleToUserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ServerChannelListViewModel">
+    <Position X="22.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EEAKAsQTAECAAAAAQEEAAAAAAaFQABACIABABhAACZg=</HashCode>
+      <FileName>ViewModels\ServerChannelListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ServerManagementViewModel">
+    <Position X="22.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAAAAAAAAAAAQAAIAAAAAGAAAAAAIAAEAAAAAAQ=</HashCode>
+      <FileName>ViewModels\ServerManagementViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ServerOverviewViewModel">
+    <Position X="27" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAEAAAAAAAgAAAAAQAAAgAAEAYAAgAAAAABAFAAAABA=</HashCode>
+      <FileName>ViewModels\ServerOverviewViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ServerRenameChannelViewModel">
+    <Position X="29.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAACAAAAAAAAAAAAAAAAAEACAAAAAAEAAA=</HashCode>
+      <FileName>ViewModels\ServerRenameChannelViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ServerRoleViewModel">
+    <Position X="34.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAIAKAEAAAUAAwQAAAAAAAQAAABIAgBAQBlAADDA=</HashCode>
+      <FileName>ViewModels\ServerRoleViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.SettingsViewModel">
+    <Position X="39" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAIAAAEAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\SettingsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.SuccessfulRegistrationPageViewModel">
+    <Position X="37.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAgAAAAAAA=</HashCode>
+      <FileName>ViewModels\SuccessfulRegistrationPageViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.VoiceChatViewModel">
+    <Position X="32" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EARQAIBGEEACAAABFEAAEAAAAQgCMQAgABAAhIAABBE=</HashCode>
+      <FileName>ViewModels\VoiceChatViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AccountPage" BaseTypeListCollapsed="true">
+    <Position X="53.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\AccountPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.AddChannelPage" BaseTypeListCollapsed="true">
+    <Position X="52" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\AddChannelPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.AddServerPage" BaseTypeListCollapsed="true">
+    <Position X="50.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\AddServerPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.AuthenticationManager" BaseTypeListCollapsed="true">
+    <Position X="57.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\AuthenticationManager.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.AuthorizationPage" BaseTypeListCollapsed="true">
+    <Position X="59" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\AuthorizationPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ChatCreatePage" BaseTypeListCollapsed="true">
+    <Position X="50.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ChatCreatePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ChatManagementPage" BaseTypeListCollapsed="true">
+    <Position X="53.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ChatManagementPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ChatPage" BaseTypeListCollapsed="true">
+    <Position X="50.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ChatPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ChatServerPage" BaseTypeListCollapsed="true">
+    <Position X="55.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ChatServerPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ChatsListPage" BaseTypeListCollapsed="true">
+    <Position X="57.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ChatsListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ErrorPage" BaseTypeListCollapsed="true">
+    <Position X="52" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ErrorPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.FriendsPage" BaseTypeListCollapsed="true">
+    <Position X="57.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\FriendsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.LeftPage" BaseTypeListCollapsed="true">
+    <Position X="59" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Pages\LeftPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.MainManager" BaseTypeListCollapsed="true">
+    <Position X="59" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\MainManager.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.MyAccountPage" BaseTypeListCollapsed="true">
+    <Position X="55.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\MyAccountPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.RegistrationPage" BaseTypeListCollapsed="true">
+    <Position X="57.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\RegistrationPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ServerAddRoleToUserPage" BaseTypeListCollapsed="true">
+    <Position X="59" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ServerAddRoleToUserPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ServerChannelList" BaseTypeListCollapsed="true">
+    <Position X="60.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAwAAAAAAAAAAAAAAAACAAAAAAAAgAAA=</HashCode>
+      <FileName>Pages\ServerChannelList.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ServerManagementPage" BaseTypeListCollapsed="true">
+    <Position X="52" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ServerManagementPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ServerOverviewPage" BaseTypeListCollapsed="true">
+    <Position X="52" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ServerOverviewPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ServerRenameChannelPage" BaseTypeListCollapsed="true">
+    <Position X="60.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ServerRenameChannelPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ServerRolePage" BaseTypeListCollapsed="true">
+    <Position X="60.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Pages\ServerRolePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.SettingsPage" BaseTypeListCollapsed="true">
+    <Position X="62.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\SettingsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.SuccessfulRegistrationPage" BaseTypeListCollapsed="true">
+    <Position X="50.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\SuccessfulRegistrationPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.VoiceChatPage" BaseTypeListCollapsed="true">
+    <Position X="62.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\VoiceChatPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ConfigurationUserHelper">
+    <Position X="78.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAAAAAAAgAAAAAAAAAAABAAUAAAA=</HashCode>
+      <FileName>Helpers\ConfigurationUserHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.FileHelper">
+    <Position X="76.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEBAAAAAAAAAAAAAAAAAAAAAAAEAABAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\FileHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.NotifyHelper">
+    <Position X="78.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\NotifyHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.SearchStyleSelector">
+    <Position X="76.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgQAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\SearchStyleSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ChannelTypeConverter" BaseTypeListCollapsed="true">
+    <Position X="58.25" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\ChannelTypeConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.DateConverter" BaseTypeListCollapsed="true">
+    <Position X="61.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\DateConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.HasAccessToChannelConverter" BaseTypeListCollapsed="true">
+    <Position X="60" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\HasAccessToChannelConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.HasValueConverter" BaseTypeListCollapsed="true">
+    <Position X="60" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\HasValueConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.IsAdminConverter" BaseTypeListCollapsed="true">
+    <Position X="61.75" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\IsAdminConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.IsIconServerVisibilityConverter" BaseTypeListCollapsed="true">
+    <Position X="60" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\IsIconServerVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.IsOpenPopupConverter" BaseTypeListCollapsed="true">
+    <Position X="58.25" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\IsOpenPopupConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.IsRoleEditableConverter" BaseTypeListCollapsed="true">
+    <Position X="61.75" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\IsRoleEditableConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.IsUnReadVisibilityConverter" BaseTypeListCollapsed="true">
+    <Position X="58.25" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\IsUnReadVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.IsVisibilityConverter" BaseTypeListCollapsed="true">
+    <Position X="61.75" Y="20.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\IsVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.IsVoiceChannelImageConverter" BaseTypeListCollapsed="true">
+    <Position X="58.25" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\IsVoiceChannelImageConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ShowFileInfoConverter" BaseTypeListCollapsed="true">
+    <Position X="60" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\ShowFileInfoConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.ServerContext">
+    <Position X="74.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgUgQnAEAGABAEhRbDAGCYCAAQAcAEQABgIACkjsALA=</HashCode>
+      <FileName>Helpers\ServerContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ServerObject">
+    <Position X="8.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Models\ServerObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ServerCmdEventArgs">
+    <Position X="80" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomEventArgs\CustomEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.ViewEventArgs">
+    <Position X="80" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAgAAAAAAQAAAAAAAACAAAAAA=</HashCode>
+      <FileName>CustomEventArgs\ViewEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.BindingProxy">
+    <Position X="80" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAgACA=</HashCode>
+      <FileName>Proxies\BindingProxy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="53.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAUEhABEBQBAIAABEgAkAAEACAAAwARAIAAICAgAg=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.Attachment">
+    <Position X="6.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\Attachment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.BaseModel">
+    <Position X="13.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BaseModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Messenger.Chat">
+    <Position X="12.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAICAAAAAAAAIIAAAAAAQBAgAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Models\Chat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.Friendship">
+    <Position X="14.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAASAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Friendship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.Message">
+    <Position X="6.25" Y="9.25" Width="1.5" />
+    <InheritanceLine Type="Messenger.BaseModel" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="6.305" />
+        <Point X="14.25" Y="6.875" />
+        <Point X="7.996" Y="6.875" />
+        <Point X="7.996" Y="8.95" />
+        <Point X="7.625" Y="8.95" />
+        <Point X="7.625" Y="9.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AgABAAAAAQAAACQAAAABAAAEAAAEAAgAAAAAAABAAAA=</HashCode>
+      <FileName>Models\Message.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Messenger.Request">
+    <Position X="8.25" Y="9.25" Width="1.5" />
+    <InheritanceLine Type="Messenger.BaseModel" ManuallyRouted="true">
+      <Path>
+        <Point X="14.25" Y="6.305" />
+        <Point X="14.25" Y="6.875" />
+        <Point X="8.126" Y="6.875" />
+        <Point X="8.126" Y="8.95" />
+        <Point X="9" Y="8.95" />
+        <Point X="9" Y="9.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAACAAAABAIAAA=</HashCode>
+      <FileName>Models\Request.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.Role">
+    <Position X="12.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAICAAAAAAAACJAAAAAAQAAAAAAAAAAAAAAgAAABA=</HashCode>
+      <FileName>Models\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.Server">
+    <Position X="16.5" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="Messenger.BaseModel" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="6.305" />
+        <Point X="14.25" Y="6.875" />
+        <Point X="16.688" Y="6.875" />
+        <Point X="16.688" Y="7.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAICAAAAAEAAQBAAAAAAQAAgAEIAAIAAAAAABxMCA=</HashCode>
+      <FileName>Models\Server.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.404" />
+  </Class>
+  <Class Name="Messenger.Settings">
+    <Position X="8.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.User">
+    <Position X="10.25" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="Messenger.BaseModel" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="6.305" />
+        <Point X="14.25" Y="6.875" />
+        <Point X="10.5" Y="6.875" />
+        <Point X="10.5" Y="7.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAABIAAAACAEBoABAAAEQEQAAgIIAAAKgBAQIBAxIAE=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.518" />
+  </Class>
+  <Class Name="Messenger.UserChat">
+    <Position X="14.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAASAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserChat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.CallsViewModel">
+    <Position X="43.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAQAIAAAAABAAAAAAgAAAACAIAAAAAARAAAABA=</HashCode>
+      <FileName>ViewModels\CallsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.SelectCameraViewModel">
+    <Position X="43.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAUAAAAAEAAAABAAABQAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\SelectCameraViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.CallsPage" BaseTypeListCollapsed="true">
+    <Position X="55.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\CallsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.SelectCameraPage" BaseTypeListCollapsed="true">
+    <Position X="76.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\SelectCameraPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.IPHelper">
+    <Position X="80" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\IPHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.VideoHelper">
+    <Position X="80" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAEpAABAAAAAAAAABAAAAQCIIJAAAkAIAAA=</HashCode>
+      <FileName>Helpers\VideoHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.AsyncExtensions">
+    <Position X="78.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Helpers\VoiceHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.VoiceHelper">
+    <Position X="78.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAIEhAABAAAgAABAAAEAEAAAAIBABAgCAAAA=</HashCode>
+      <FileName>Helpers\VoiceHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.IsDialogConverter" BaseTypeListCollapsed="true">
+    <Position X="61.75" Y="22" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\IsDialogConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Messenger.Call">
+    <Position X="14.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Models\Call.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.CancelCall">
+    <Position X="12.25" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CancelCall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.FrameInfo">
+    <Position X="6.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\FrameInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.GroupCall">
+    <Position X="16.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\GroupCall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.IPUser">
+    <Position X="8.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IPUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.Package">
+    <Position X="10.25" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAABAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Package.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.RecieveThread">
+    <Position X="78.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\RecieveThread.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.UserChatDTO">
+    <Position X="16.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserChatDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.VoiceChatMember">
+    <Position X="14.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAgAAAAAE=</HashCode>
+      <FileName>Models\VoiceChatMember.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Messenger.Native">
+    <Position X="81.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="Messenger.Native.POINT" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\Native.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="Messenger.Native.MINMAXINFO" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\Native.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Class Name="Messenger.Native.MONITORINFO" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\Native.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Struct Name="Messenger.Native.RECT" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Components\Native.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAQIAAAAAAA=</HashCode>
+      <FileName>Components\Native.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Messenger.IEventSubscriber">
+    <Position X="48.25" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAABA=</HashCode>
+      <FileName>Interfaces\IEventSubscriber.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Messenger.IFileHolder">
+    <Position X="51.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Interfaces\IFileHolder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Messenger.IViewSwitcher">
+    <Position X="50" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IViewSwitcher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Messenger.Command">
+    <Position X="50" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCECQEIDAKABAQDBgAAAAJAEARCdEBBgMAAcIBhACBg=</HashCode>
+      <FileName>Enums\Command.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Messenger.Month">
+    <Position X="51.75" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACBABAEAAABAECAAQAAAABAAAAEAAAAACAAAAAA=</HashCode>
+      <FileName>Enums\Month.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Messenger.ViewPlace">
+    <Position X="48.25" Y="17.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAACACQAAAAAAA=</HashCode>
+      <FileName>Enums\ViewPlace.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Messenger.ViewType">
+    <Position X="48.25" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAQAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\ViewType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="Messenger.ViewHandler">
+    <Position X="51.75" Y="21.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Interfaces\IViewSwitcher.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Messenger.ServerCmdEventHandler">
+    <Position X="51.75" Y="20.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\ServerContext.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

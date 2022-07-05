@@ -1,0 +1,287 @@
+﻿<UserControl x:Class="Messenger.ServerRolePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Messenger"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/ListBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/ButtonDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/TabControllerDictionar.xaml"/>
+                <ResourceDictionary Source="/Styles/LabelDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/TextBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/CheckBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/TextBlockDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            <local:IsVoiceChannelImageConverter x:Key="IsVoiceChannelImageConverter"/>
+            <local:HasAccessToChannelConverter x:Key="HasAccessToChannelConverter"/>
+            <local:IsRoleEditableConverter x:Key="IsRoleEditableConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="#c6c6c6"
+                BorderThickness="0 0 0.2 0">
+            <Grid Grid.Column="0" Margin="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Style="{StaticResource ServerTitleChannelButtonStyle}" 
+                        x:Name="addButton" 
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Width="115"
+                        Height="20"
+                        Command="{Binding AddRoleCommand}">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="10"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Добавить роль"
+                                       FontSize="14"
+                                       Foreground="{Binding ElementName=addButton, Path=Foreground}"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"/>
+                            <Path Grid.Column="1"
+                                  Margin="0 2 0 0"
+                              Stroke="{Binding ElementName=addButton, Path=Foreground}"
+                              Data="M0,5 H10 M5,5 V10Z"
+                              StrokeThickness="2"
+                              Height="10"
+                              Width="10" />
+                        </Grid>
+                    </Button.Content>
+                </Button>
+
+
+                <ListBox Grid.Row="1"
+                         Margin="10"
+                         Name="roleList"
+                         Foreground="#c6c6c6"
+                         Style="{StaticResource ServerChannelListBoxStyle}"
+                         ItemsSource="{Binding Server.Roles}"
+                         ItemContainerStyle="{StaticResource ChannelItemStyle}"
+                         SelectionChanged="OnSelectionChanged"
+                         SelectedItem="{Binding SelectedRole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Margin="5"
+                                       HorizontalAlignment="Left"
+                                       Name="roleNameBlock"
+                                       Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=Foreground}"
+                                       Text="{Binding Name}"/>
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding
+                                                    RelativeSource={RelativeSource
+                                                    Mode=FindAncestor,
+                                                    AncestorType={x:Type ListBoxItem}},
+                                                    Path=IsSelected}"
+                                            Value="True">
+                                    <Setter TargetName="roleNameBlock"  Property="Foreground" Value="White"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Column="1"
+              Margin="5 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding SelectedRole.Name, StringFormat=Редактировать роль - {0}}"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Style="{StaticResource PrimaryTextBlockStyle}"/>
+                <Button Grid.Column="1"
+                        Content="Удалить"
+                        Width="80"
+                        Height="30"
+                        Command="{Binding RemoveRoleCommand}"
+                        Margin="0 8 0 0"
+                        HorizontalAlignment="Center"
+                        Style="{StaticResource RedButtonStyle}"
+                        VerticalAlignment="Center"/>
+            </Grid>
+
+            <TabControl Grid.Row="2" BorderThickness="0" Background="#36393F" Style="{StaticResource TabControllerStyle}"
+                        x:Name="Menu">
+                <TabItem Header="Показать" Style="{StaticResource TabItemStyle}"
+                         x:Name="Show">
+                    <StackPanel Margin="10">
+                        <Label Style="{StaticResource PrimaryPageLabelStyle}"
+                               Target="{Binding ElementName=roleBox}"
+                               Content="Название роли"/>
+
+                        <TextBox x:Name="roleBox" 
+                                 Style="{StaticResource PrimaryPageTextBoxStyle}"
+                                 Text="{Binding SelectedRole.Name, Mode=OneWay}"
+                                 Padding="10 5"
+                                 MaxLength="50"
+                                 IsEnabled="{Binding SelectedRole.Name, Converter={StaticResource IsRoleEditableConverter}}"/>
+                        <Button Style="{StaticResource ButtonBlueBackStyle}"
+                                HorizontalAlignment="Stretch"
+                                Width="150"
+                                CommandParameter="{Binding ElementName=roleBox, Path=Text}"
+                                Command="{Binding SaveChangeCommand}"
+                                Content="Сохранить"/>
+                    </StackPanel>
+                </TabItem>
+                
+                <TabItem Header="Права доступа" Style="{StaticResource TabItemStyle}"
+                         x:Name="Access">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0"
+                                   Text="Каналы"
+                                   Style="{StaticResource PrimaryTextBlockStyle}"
+                                   FontSize="14"
+                                   HorizontalAlignment="Left"
+                                   Margin="20 0 0 0"
+                                   VerticalAlignment="Center"/>
+                        <ListBox Style="{StaticResource ListBoxWithCheckBoxStyle}"
+                                 Grid.Row="1"
+                                 ItemsSource="{Binding Server.Chats, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="5" x:Name="Grid">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0"
+                                                   Source="{Binding IsVoiceChat, Converter={StaticResource IsVoiceChannelImageConverter}}"
+                                                   HorizontalAlignment="Left" Width="20" Height="20"/>
+                                        <TextBlock Text="{Binding Name}"
+                                                   Foreground="#c7c7c7"
+                                                   Grid.Column="1"
+                                                   HorizontalAlignment="Left"
+                                                   VerticalAlignment="Center"/>
+                                        <CheckBox Name="RememberCheckBox"
+                                                  Style="{StaticResource CheckBoxStyle}"
+                                                  Width="40"
+                                                  Command="{Binding DataContext.ChangeRoleChatsCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                                                  CommandParameter="{Binding ElementName=Grid, Path=DataContext}"
+                                                  Grid.Column="2"
+                                                  HorizontalAlignment="Left"
+                                                  Margin="0 0 0 0">
+                                            
+                                            <CheckBox.IsChecked>
+                                                <MultiBinding Converter="{StaticResource HasAccessToChannelConverter}" Mode="OneWay">
+                                                    <Binding ElementName="Grid" Path="DataContext"/>
+                                                    <Binding RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}"
+                                                             Path="DataContext.SelectedRole"/>
+                                                </MultiBinding>
+                                                
+                                            </CheckBox.IsChecked>
+                                        </CheckBox>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </TabItem>
+                
+                <TabItem Header="Управлять" Style="{StaticResource TabItemStyle}">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="181*"/>
+                            <ColumnDefinition Width="421*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Style="{StaticResource TextBoxSearchStyle}"
+                                     Text=""
+                                     VerticalAlignment="Center"
+                                     Margin="4"
+                                     Grid.Column="0"
+                                     Tag="Поиск"/>
+                            <Button Style="{StaticResource ButtonBlueBackStyle}"
+                                    HorizontalAlignment="Stretch"
+                                    Grid.Column="1"
+                                    Width="150"
+                                    Height="30"
+                                    Content="Добавить участника"
+                                    Command="{Binding AddMemberCommand}"/>
+                        </Grid>
+                        
+                        <ListBox Grid.Row="1"
+                                 Margin="2,2,2,2"
+                                 Style="{StaticResource ListBoxWithCheckBoxStyle}"
+                                 Grid.ColumnSpan="2"
+                                 ItemsSource="{Binding UsersInRole}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Button Margin="0 5 0 0"
+                                        Padding="5"
+                                        x:Name="btn"
+                                        Style="{StaticResource FriendButtonStyle}"
+                                        Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.PopupCommand}"
+                                        CommandParameter="{Binding Email}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30"/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="30"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="/Images/contacts.png" Grid.Column="0" HorizontalAlignment="Left" Width="20"/>
+                                            <TextBlock Margin="5 0 0 0"
+                                                       Grid.Column="1"
+                                                       HorizontalAlignment="Left"
+                                                       VerticalAlignment="Center"
+                                                       Foreground="#c7c7c7"
+                                                       FontSize="12"
+                                                       TextTrimming="CharacterEllipsis"
+                                                       Text="{Binding Email}"/>
+                                            <Button Grid.Column="2" 
+                                                    Width="20"
+                                                    Height="20"
+                                                    Content="&#10006;"
+                                                    Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=DataContext.RemoveUserFromRoleCommand}"
+                                                    CommandParameter="{Binding ElementName=btn, Path=DataContext.Email}"
+                                                    Style="{StaticResource LittleCrossButtonStyle}"
+                                                    Name="deleteButton">
+                                            </Button>
+                                        </Grid>
+                                    </Button>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+    </Grid>
+</UserControl>

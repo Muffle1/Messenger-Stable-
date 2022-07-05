@@ -1,0 +1,9 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source = WIN-S6LKAU5HB3I\\SQL; Initial Catalog=Messenger; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"
+  }
+
+  //"ConnectionStrings": {
+  //  "DefaultConnection": "Data Source = MUFFLEPC\\SQLEXPRESS; Initial Catalog=Messenger; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False"
+  //}
+}

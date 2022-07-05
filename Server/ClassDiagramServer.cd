@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Server.DataBaseHelper">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gKECAAMCCaAEAADB4AAAAYEEAQAQEBggOAEYEBBoABg=</HashCode>
+      <FileName>Helpers\DataBaseHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.FileHelper">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAEAAAAABAA=</HashCode>
+      <FileName>Helpers\FileHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.Attachment">
+    <Position X="4" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\Attachment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.Chat">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAACAAAAAAAAIIAAAAAAQBAgAAAAAAAAAAAwAAAAA=</HashCode>
+      <FileName>Models\Chat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.Friendship">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAASAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Friendship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.IPUser">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IPUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.Message">
+    <Position X="11" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABAAAAAQAAACAAAAABAAAEAAAEAAgAAAAAAABAAAA=</HashCode>
+      <FileName>Models\Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.Request">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAACAAAABAIAAA=</HashCode>
+      <FileName>Models\Request.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.Role">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAACJAAAAAAQAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Models\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.Server">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAQBAAAAAAQAAgAEIAAAAAAAAABAAAA=</HashCode>
+      <FileName>Models\Server.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.ServerObject">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Models\ServerObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.Settings">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.User">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABCAAAAABAAAEQASAAgAIAAACiBAQAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.UserChat">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAASAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserChat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.DataBaseContext">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAACAAAgAAAAABAAAAAAAAEgAAAAAAgBAAARAAAAA=</HashCode>
+      <FileName>Contexts\DataBaseContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.ClientContext">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACECAABAAAAAAEAAQgAAAACIAAAMAAAAAIQACACEAEA=</HashCode>
+      <FileName>Contexts\ClientContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.Program">
+    <Position X="2.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAABAEAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.ServerContext">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIBAgAAAAAEBAAAAAAAAAAQAAAIAAEAQAAAABAIA=</HashCode>
+      <FileName>Contexts\ServerContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.Call">
+    <Position X="2.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Models\Call.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.CancelCall">
+    <Position X="12.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CancelCall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.GroupCall">
+    <Position X="11" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\GroupCall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.Package">
+    <Position X="4" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAABAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Package.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Server.UserChatDTO">
+    <Position X="7.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserChatDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Server.Command">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCECQEIDAKABAQDBgAAAAJAEARCdEBBgMAAcIBhACBg=</HashCode>
+      <FileName>Enums\Command.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

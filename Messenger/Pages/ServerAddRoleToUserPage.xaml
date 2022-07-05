@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="Messenger.ServerAddRoleToUserPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Messenger"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/TextBlockDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/TextBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/ListBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/CheckBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/ButtonDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid Background="#40444B"
+          Width="700"
+          Height="500">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <TextBlock Text="Добавить участников"
+                       FontSize="24"
+                       Style="{StaticResource PrimaryTextBlockStyle}"/>
+            <TextBlock Text="{Binding SelectedRole.Name}"
+                       Style="{StaticResource TextInAccountUserStyle}"
+                       FontSize="12"
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+        <Border Grid.Row="1" 
+                VerticalAlignment="Center"
+                BorderBrush="#202124"
+                BorderThickness="0 0 0 0">
+            <TextBox Style="{StaticResource TextBoxSearchStyle}"
+                        x:Name="SearchStringTextBox"
+                        Text="{Binding SearchString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Margin="4"
+                        Tag="Поиск">
+            </TextBox>
+        </Border>
+        <TextBlock Grid.Row="2"
+                   Style="{StaticResource PrimaryTextBlockStyle}"
+                   HorizontalAlignment="Left"
+                   Margin="10 0 0 0"
+                   FontSize="13"
+                   VerticalAlignment="Center"
+                   Text="Участники"/>
+        <ListBox Grid.Row="3"
+                 Style="{StaticResource ListBoxWithCheckBoxStyle}"
+                 Margin="5"
+                 ItemsSource="{Binding Users}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid x:Name="Grid" Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Email}"
+                                   HorizontalAlignment="Left"
+                                   Foreground="#c7c7c7"
+                                   VerticalAlignment="Center"/>
+                        <CheckBox Name="RememberCheckBox"
+                                  Style="{StaticResource CheckBoxStyle}"
+                                  Width="40"
+                                  Command="{Binding DataContext.AddUserToRoleCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                                  CommandParameter="{Binding ElementName=Grid, Path=DataContext.Email}"
+                                  Grid.Column="1"
+                                  HorizontalAlignment="Left"
+                                  Margin="0 0 0 0"/>
+                    </Grid>
+                </DataTemplate>
+               
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="4"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0 0 10 0"
+                    Orientation="Horizontal">
+            <Button Content="Отмена"
+                    Width="100"
+                    Style="{StaticResource ButtonBlueBackStyle}"
+                    Command="{Binding CloseCommand}"/>
+            <Button Content="Добавить"
+                    Style="{StaticResource ButtonBlueBackStyle}"
+                    Width="100"
+                    Command="{Binding AddCommand}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

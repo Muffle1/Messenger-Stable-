@@ -1,0 +1,233 @@
+﻿<UserControl x:Class="Messenger.ServerChannelList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Messenger"
+             xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#202225">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/TextBlockDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/ButtonDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/ListBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/ScrollViewerDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <local:BindingProxy x:Key="Proxy" Data="{Binding}" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Border Background="#2F3136"
+            CornerRadius="10 0 0 0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Border BorderBrush="#202124"
+                    BorderThickness="0 0 0 1"
+                    Padding="0">
+                <Button Style="{StaticResource ServerNameButtonStyle}"
+                        Command="{Binding OpenManagementCommand}"
+                        Padding="10 0">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="{Binding Server.Name}" 
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       Style="{StaticResource PrimaryTextBlockStyle}"
+                                       FontSize="18"/>
+
+                            <Image Grid.Column="1" 
+                                   Height="20" 
+                                   Width="20" 
+                                   HorizontalAlignment="Right" 
+                                   Source="/Images/settings.png"/>
+                        </Grid>
+                    </Button.Content>
+                </Button>
+            </Border>
+            
+            <ScrollViewer PreviewMouseWheel="ScrollViewer_PreviewMouseWheel"
+                          Grid.Row="1"  
+                          Focusable="False"
+                          Style="{StaticResource ScrollViewerServerChannelStyle}"
+                          Margin="3">
+                <StackPanel>
+                    <Grid Margin="0 10 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Style="{StaticResource ServerTitleChannelButtonStyle}" Content="ТЕКСТОВЫЕ КАНАЛЫ"/>
+                        <Button Style="{StaticResource ServerTitleChannelButtonStyle}" x:Name="plusButton" Grid.Column="1"
+                                Command="{Binding AddChannelCommand}"
+                                CommandParameter="TextChat">
+                            <Button.Content>
+                                <Path Margin="10" Stroke="{Binding ElementName=plusButton, Path=Foreground}" Data="M0,5 H10 M5,5 V10Z"  StrokeThickness="2" Height="10" Width="10" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                    
+                    <ListBox x:Name="TextChannels"
+                             Style="{StaticResource ServerChannelListBoxStyle}"
+                             SelectedItem="{Binding SelectedChannel}"
+                             PreviewMouseRightButtonDown="TextChannels_PreviewMouseRightButtonDown"
+                             ItemsSource="{Binding TextChannels}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="30"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button x:Name="button"     
+                                            Click="ChatChannel_Click"
+                                            Style="{StaticResource ServerTitleChannelButtonStyle}">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="25"/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Grid.Column="0"
+                                                       Source="/Images/note.png"
+                                                       HorizontalAlignment="Left" Width="20" Height="20"/>
+                                                <TextBlock Text="{Binding Name}"
+                                                           VerticalAlignment="Center"
+                                                           HorizontalAlignment="Left"
+                                                           TextTrimming="CharacterEllipsis"
+                                                           Grid.Column="1"
+                                                           Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=Foreground}"/>
+                                            </Grid>
+                                        </Button.Content>
+                                        <Button.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Header="Удалить"
+                                                          Command="{Binding Source={StaticResource Proxy}, Path=Data.RemoveChannelCommand}"
+                                                          CommandParameter="{Binding Id_Chat}"/>
+                                            </ContextMenu>
+                                        </Button.ContextMenu>
+                                    </Button>
+                                    
+                                    <Button Style="{StaticResource ServerSettingsChannelButtonStyle}"
+                                            Grid.Column="1"
+                                            Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Path=DataContext.ChangeChannelCommand}"
+                                            CommandParameter="{Binding Id_Chat}"
+                                            HorizontalAlignment="Right"
+                                            Width="23"
+                                            Height="23"
+                                            Visibility="Visible">
+                                        <Image Width="20"
+                                               Height="20"
+                                               Source="/Images/settings.png"/>
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Style="{StaticResource ServerTitleChannelButtonStyle}" Content="ГОЛОСОВЫЕ КАНАЛЫ" Grid.Column="0" Margin="0,0,0,0"/>
+                        <Button Style="{StaticResource ServerTitleChannelButtonStyle}" x:Name="plusVoiceButton" Grid.Column="1"
+                                Command="{Binding AddChannelCommand}"
+                                CommandParameter="VoiceChat">
+                            <Button.Content>
+                                <Path Margin="10" Stroke="{Binding ElementName=plusVoiceButton, Path=Foreground}" Data="M0,5 H10 M5,5 V10Z"  StrokeThickness="2" Height="10" Width="10" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                    
+                    <ListBox x:Name="VoiceChannels"
+                             Style="{StaticResource ServerChannelListBoxStyle}"
+                             SelectedItem="{Binding SelectedChannel}"
+                             ItemsSource="{Binding VoiceChannels}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="30"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button x:Name="button"
+                                            Style="{StaticResource ServerTitleChannelButtonStyle}"
+                                            Click="VoiceChannel_Click">
+                                        <Button.Content>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="25"/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition Width="35"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Grid.Column="0"
+                                                   Source="/Images/voice.png"
+                                                   HorizontalAlignment="Left" Width="20" Height="20"/>
+                                                <TextBlock Text="{Binding Name}"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left"
+                                               TextTrimming="CharacterEllipsis"
+                                               Grid.Column="1"
+                                               Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=Foreground}"/>
+                                                <TextBlock Text="2 chel"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left"
+                                               TextTrimming="CharacterEllipsis"
+                                               Grid.Column="2"
+                                               Foreground="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=Foreground}"/>
+                                            </Grid>
+                                        </Button.Content>
+
+                                        <Button.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem Header="Удалить"
+                                                          Command="{Binding Source={StaticResource Proxy}, Path=Data.RemoveChannelCommand}"
+                                                          CommandParameter="{Binding Id_Chat}"/>
+                                            </ContextMenu>
+                                        </Button.ContextMenu>
+                                    </Button>
+                                    <Button Style="{StaticResource ServerSettingsChannelButtonStyle}"
+                                            Grid.Column="1"
+                                            Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}},Path=DataContext.ChangeChannelCommand}"
+                                            CommandParameter="{Binding Id_Chat}"
+                                            HorizontalAlignment="Right"
+                                            Width="23"
+                                            Height="23"
+                                            Visibility="Visible">
+                                        <Image Width="20"
+                                               Height="20"
+                                               Source="/Images/settings.png"/>
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </ScrollViewer>
+
+            <Border BorderBrush="#202124"
+                    BorderThickness="0 1 0 0"
+                    Grid.Row="2">
+                <Button Content="Покинуть сервер"
+                        Style="{StaticResource ButtonOptionsStyle}"
+                        FontFamily="Default"
+                        Margin="5"
+                        Command="{Binding LeaveCommand}"/>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,124 @@
+﻿<UserControl x:Class="Messenger.MainManager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:local="clr-namespace:Messenger"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <local:IsOpenPopupConverter x:Key="IsOpenPopupConverter"/>
+
+            <DataTemplate DataType="{x:Type local:AccountViewModel}">
+                <local:AccountPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:MyAccountViewModel}">
+                <local:MyAccountPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:SettingsViewModel}">
+                <local:SettingsPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ServerChannelListViewModel}">
+                <local:ServerChannelList/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ChatCreateViewModel}">
+                <local:ChatCreatePage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ChatManagementViewModel}">
+                <local:ChatManagementPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:LeftViewModel}">
+                <local:LeftPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ChatsListViewModel}">
+                <local:ChatsListPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ChatViewModel}">
+                <local:ChatPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:FriendsViewModel}">
+                <local:FriendsPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:AddServerViewModel}">
+                <local:AddServerPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:VoiceChatViewModel}">
+                <local:VoiceChatPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:AddChannelViewModel}">
+                <local:AddChannelPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ErrorViewModel}">
+                <local:ErrorPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ChatServerViewModel}">
+                <local:ChatServerPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ServerManagementViewModel}">
+                <local:ServerManagementPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:ServerAddRoleToUserViewModel}">
+                <local:ServerAddRoleToUserPage/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type local:ServerRenameChannelViewModel}">
+                <local:ServerRenameChannelPage/>
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type local:CallsViewModel}">
+                <local:CallsPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type local:SelectCameraViewModel}">
+                <local:SelectCameraPage/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.7*"/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Content="{Binding LeftPage, UpdateSourceTrigger=PropertyChanged}"/>
+        <ContentControl Content="{Binding MiddlePage, UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Column="1"/>
+        <ContentControl Content="{Binding RightPage, UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Column="2"/>
+
+        <Grid x:Name="Blackout"
+              Opacity="0.7"
+              Background="Black"
+              Visibility="{Binding PopupWindow, Converter={StaticResource IsOpenPopupConverter}}"
+              Grid.ColumnSpan="3">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDown" >
+                    <i:InvokeCommandAction Command="{Binding ClosePopup}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Grid>
+        <Border Visibility="{Binding ElementName=Blackout, Path=Visibility}"
+                Grid.ColumnSpan="3">
+            <ContentControl Content="{Binding PopupWindow, UpdateSourceTrigger=PropertyChanged}"/>
+        </Border>
+    </Grid>
+</UserControl>

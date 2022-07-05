@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Messenger.AccountPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Messenger"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/TextBlockDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/TabControllerDictionar.xaml"/>
+                <ResourceDictionary Source="/Styles/ButtonDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Width="600"
+          Height="400">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="125"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="#202225" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="105"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" CornerRadius="45" Width="90" Height="90" Margin="5 0 0 0">
+                <Border.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="/Images/AccoutImage.jpg"/>
+                </Border.Background>
+            </Border>
+            <TextBlock Grid.Column="2" Text="{Binding SelectedUser.Login}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Style="{StaticResource PrimaryTextBlockStyle}">
+                <TextBlock.ToolTip>
+                    <TextBlock Text="{Binding SelectedUser.Login}"/>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <Button Grid.Column="3" HorizontalAlignment="Center" Margin="0" Content="Отправить сообщение" Style="{StaticResource GreenButtonStyle}" Width="175" Height="30"
+                    Command="{Binding OpenChatCommand}"/>
+            <Button Grid.Column="5" Content="Удалить" Width="80" Height="30" Margin="0" HorizontalAlignment="Center" Style="{StaticResource RedButtonStyle}" VerticalAlignment="Center" Command="{Binding RemoveFriendCommand}"/>
+        </Grid>
+        <Grid Grid.Row="1" Background="#202225">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Separator VerticalAlignment="Top" Grid.Row="0"/>
+            <TabControl Grid.Row="2" Background="#303136" BorderThickness="0" Style="{StaticResource TabControllerStyle}">
+                <TabItem Header="Личные данные" Style="{StaticResource TabItemStyle}">
+                    <Grid Margin="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                       
+                        <TextBlock Text="Основная информация" Style="{StaticResource PrimaryTextBlockStyle}"/>
+                        <TextBlock Grid.Row="1" Text="{Binding SelectedUser.Name, StringFormat=Имя: {0}}" FontSize="17" VerticalAlignment="Center" Style="{StaticResource TextInAccountUserStyle}"/>
+                        <TextBlock Grid.Row="2" Text="{Binding SelectedUser.SurName, StringFormat=Фамилия: {0}}" FontSize="17" VerticalAlignment="Center" Style="{StaticResource TextInAccountUserStyle}"/>
+                        <TextBlock Grid.Row="3" Text="{Binding SelectedUser.Birthday, StringFormat=Дата рождения: {0:dd.MM.yyyy}}" FontSize="17" VerticalAlignment="Center" Style="{StaticResource TextInAccountUserStyle}"/>
+                        <TextBlock Grid.Row="4" Text="{Binding SelectedUser.PhoneNumber, StringFormat=Телефон: {0}}" FontSize="17" VerticalAlignment="Center" Style="{StaticResource TextInAccountUserStyle}"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Общие друзья" Style="{StaticResource TabItemStyle}">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Идут технические работы..." Style="{StaticResource TextInAccountUserStyle}" VerticalAlignment="Center"/>
+                        <Image Source="/Images/gear.png"  Width="50" Margin="25 0 0 0"  Height="50"/>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Общие беседы" Style="{StaticResource TabItemStyle}">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Идут технические работы..." Style="{StaticResource TextInAccountUserStyle}" VerticalAlignment="Center"/>
+                        <Image Source="/Images/gear.png"  Width="50" Margin="25 0 0 0"  Height="50"/>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</UserControl>

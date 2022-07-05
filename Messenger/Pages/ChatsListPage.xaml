@@ -1,0 +1,184 @@
+﻿<UserControl x:Class="Messenger.ChatsListPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:local="clr-namespace:Messenger"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#202225">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/TextBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/TextBlockDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/ButtonDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/ListBoxDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="UserClassStyle" TargetType="{x:Type ListBoxItem}">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Grid Name="grid" Margin="5" HorizontalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" Margin="2 0" CornerRadius="20" Width="40" Height="40">
+                                    <Border.Background>
+                                        <ImageBrush Stretch="Fill" ImageSource="/Images/AccoutImage.jpg"/>
+                                    </Border.Background>
+                                </Border>
+                                <TextBlock Name="text"  Grid.Column="1"  Margin="10 0 0 0" Text="{Binding Login}" TextTrimming="CharacterEllipsis" HorizontalAlignment="Stretch"  Foreground="#c7c7c7" VerticalAlignment="Center" FontSize="16"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="grid" Property="Background" Value="#393c43"/>
+                                    <Setter TargetName="text" Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="ChatClassStyle" TargetType="{x:Type ListBoxItem}">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                            <Border CornerRadius="5" Background="{TemplateBinding Background}" Margin="2">
+                                <Grid Margin="3" HorizontalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="41"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" CornerRadius="20" Width="40" Height="40">
+                                        <Border.Background>
+                                            <ImageBrush Stretch="Fill" ImageSource="/Images/Chat.jpg"/>
+                                        </Border.Background>
+                                    </Border>
+                                    <TextBlock Grid.Column="1"  Margin="10 0 0 0" Text="{Binding Name}" TextTrimming="CharacterEllipsis" HorizontalAlignment="Stretch"  Foreground="#c7c7c7" VerticalAlignment="Center" FontSize="16"/>
+                                </Grid>
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#35383C"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="#3B3E43"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border CornerRadius="10 0 0 0"
+            Background="#2F3136">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Border BorderBrush="#202124"
+                BorderThickness="0 0 0 1">
+                <TextBox Style="{StaticResource TextBoxSearchStyle}"
+                        x:Name="SearchStringTextBox"
+                        Text="{Binding SearchString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Margin="4"
+                        Tag="Поиск">
+                </TextBox>
+            </Border>
+            
+            <Button Style="{StaticResource ButtonChatListStyle}"
+                Grid.Row="1"
+                Margin="5"
+                Click="friendsOpenButton_Click"
+                x:Name="friendsOpenButton"
+                HorizontalContentAlignment="Stretch"
+                Command="{Binding FriendsCommand}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Images/friends.png"
+                       Margin="2"/>
+
+                    <TextBlock Text="Друзья"
+                           Grid.Column="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="15"
+                           Margin="10 0 0 0"
+                           Foreground="{Binding ElementName=friendsOpenButton,Path=Foreground}"/>
+                </Grid>
+            </Button>
+
+            <Button Style="{StaticResource ButtonChatListStyle}"
+                Grid.Row="2"
+                Margin="5"
+                x:Name="settingsButton"
+                HorizontalContentAlignment="Stretch"
+                Command="{Binding SettingsCommand}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Images/parameters.png"
+                       Margin="2"/>
+
+                    <TextBlock Text="Настройки"
+                           Grid.Column="1"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           FontSize="15"
+                           Margin="10 0 0 0"
+                           Foreground="{Binding ElementName=settingsButton,Path=Foreground}"/>
+                </Grid>
+            </Button>
+
+            <ListBox Style="{StaticResource ListBoxChatStyle}"
+                    Grid.Row="3"
+                    SelectionChanged="ChatList_SelectionChanged"
+                    Name="ChatList"
+                    SelectedItem="{Binding SelectedSearch, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    ItemsSource="{Binding ItemControl.ItemsSource}"
+                    HorizontalContentAlignment="Stretch">
+                <ListBox.ItemContainerStyleSelector>
+                    <local:SearchStyleSelector  ChatClassStyle="{StaticResource ChatClassStyle}"
+                                            UserClassStyle="{StaticResource UserClassStyle}"/>
+                </ListBox.ItemContainerStyleSelector>
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Добавить в друзья"
+                                Command="{Binding AddFriendCommand}"/>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+            </ListBox>
+
+            <Border BorderBrush="#202124"
+                BorderThickness="0 1 0 0"
+                Grid.Row="4">
+                <Button Content="Создать беседу"
+                    Style="{StaticResource ButtonOptionsStyle}"
+                    FontFamily="Default"
+                    Margin="5"
+                    Command="{Binding PopupCommand}"
+                    CommandParameter="CreateChat"/>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

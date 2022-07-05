@@ -1,0 +1,172 @@
+﻿<UserControl x:Class="Messenger.RegistrationPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Messenger"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:extratools="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="450">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/LabelDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/TextBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/ButtonDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/PasswordBoxDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/TextBlockDictionary.xaml"/>
+                <ResourceDictionary Source="/Styles/ComboBoxDictionary.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <local:IsVisibilityConverter x:Key="IsVisibilityConverter"/>
+            <local:DateConverter x:Key="DateConverter"/>
+
+            <ObjectDataProvider x:Key="monthsFromEnum" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="local:Month"/>
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Background="#36393F"
+            Width="450"
+            MaxHeight="580"
+            CornerRadius="5"
+            Padding="25 0 0 0">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Style="{StaticResource PrimaryTextBlockStyle}" 
+                       Text="Создать учетную запись!"/>
+
+            <Label Style="{StaticResource PrimaryPageLabelStyle}"
+                   Content="Имя пользователя"/>
+
+            <TextBox Style="{StaticResource PrimaryPageTextBoxStyle}"
+                     Text="{Binding UserReg.Name}"
+                     Padding="10 5"
+                     MaxLength="50"/>
+
+            <Label Style="{StaticResource PrimaryPageLabelStyle}"
+                   Target="{Binding ElementName=surnameBox}"
+                   Content="Фамилия пользователя"/>
+
+            <TextBox x:Name="surnameBox" Style="{StaticResource PrimaryPageTextBoxStyle}"
+                     Text="{Binding UserReg.SurName}"
+                     Padding="10 5"
+                     MaxLength="50"/>
+
+            <Label Style="{StaticResource PrimaryPageLabelStyle}" 
+                   Content="Электронная почта"/>
+
+            <TextBox Style="{StaticResource PrimaryPageTextBoxStyle}"
+                     Text="{Binding UserReg.Email}"
+                     Padding="10 5"
+                     MaxLength="100"/>
+
+            <Label Style="{StaticResource PrimaryPageLabelStyle}" 
+                   Content="Номер телефона"/>
+
+            <extratools:MaskedTextBox Style="{StaticResource PrimaryPageTextBoxStyle}"
+                                      Mask="+7(999)999-99-99"
+                                      Padding="10 5"
+                                      Text="{Binding UserReg.PhoneNumber}"
+                                      MaxLength="16"/>
+
+            <Label Style="{StaticResource PrimaryPageLabelStyle}" 
+                   Content="Логин"/>
+            <TextBox Style="{StaticResource PrimaryPageTextBoxStyle}"
+                     Padding="10 5"
+                     Text="{Binding UserReg.Login}" MaxLength="50"/>
+
+            <Label Style="{StaticResource PrimaryPageLabelStyle}"
+                   Content="Пароль"/>
+
+            <PasswordBox x:Name="Password"
+                         local:BoundPasswordBox.BoundPassword="{Binding UserReg.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnExceptions=True}"
+                         Style="{DynamicResource PrimaryPagePasswordBoxStyle}"
+                         MaxLength="50"
+                         />
+
+            <Label Style="{StaticResource PrimaryPageLabelStyle}"
+                   Content="Дата рождения"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1.25*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <ComboBox Style="{StaticResource ComboBoxRegStyle}"
+                              Margin="0 0 5 0"
+                              x:Name="ComboBoxDays"
+                              ItemsSource="{Binding Days}"
+                              SelectedItem="{Binding UserReg.Birthday, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DateConverter}, ConverterParameter=Day}"/>
+
+                    <TextBlock Text="День"
+                               FontSize="15"
+                               Foreground="#D1D2D3"
+                               IsHitTestVisible="False"
+                               HorizontalAlignment="Stretch"
+                               VerticalAlignment="Center"
+                               Padding="10 0"
+                               TextAlignment="Left"
+                               Visibility="{Binding ElementName=ComboBoxDays, Path=SelectedItem, Converter={StaticResource IsVisibilityConverter}}"/>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <ComboBox x:Name="ComboBoxMonths"  
+                              Style="{StaticResource ComboBoxRegStyle}"
+                              Margin="5 0"
+                              ItemsSource="{Binding Source={StaticResource monthsFromEnum}}"
+                              SelectedItem="{Binding UserReg.Birthday, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DateConverter}, ConverterParameter=Month}"/>
+
+                    <TextBlock Text="Месяц"
+                               FontSize="15"
+                               Foreground="#D1D2D3"
+                               IsHitTestVisible="False"
+                               HorizontalAlignment="Stretch"
+                               VerticalAlignment="Center"
+                               Padding="10 0"
+                               TextAlignment="Left"
+                               Visibility="{Binding ElementName=ComboBoxMonths, Path=SelectedItem, Converter={StaticResource IsVisibilityConverter}}"/>
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <ComboBox x:Name="ComboBoxYears"  
+                              Style="{StaticResource ComboBoxErrorStyle}"
+                              Margin="5 0 0 0"
+                              ItemsSource="{Binding Years}"
+                              SelectedItem="{Binding UserReg.Birthday, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DateConverter}, ConverterParameter=Year}"/>
+
+                    <TextBlock Text="Год"
+                               FontSize="15"
+                               Foreground="#D1D2D3"
+                               IsHitTestVisible="False"
+                               HorizontalAlignment="Stretch"
+                               VerticalAlignment="Center"
+                               Padding="10 0"
+                               TextAlignment="Left"
+                               Visibility="{Binding ElementName=ComboBoxYears, Path=SelectedItem, Converter={StaticResource IsVisibilityConverter}}"/>
+                </Grid>
+
+
+            </Grid>
+
+            <Button Style="{StaticResource ButtonBlueBackStyle}"
+                    Width="150"
+                    HorizontalAlignment="Center"
+                    Command="{Binding RegistrationPageCommand}"
+                    CommandParameter="{Binding ElementName=Password, Path=(local:BoundPasswordBox.PasswordLength)}"
+                    Content="Зарегистрироваться"/>
+
+            <Button Style="{StaticResource ButtonLinkStyle}"
+                Command="{Binding BackCommand}"
+                HorizontalAlignment="Center"
+                Content="Уже зарегистрированны?"/>
+        </StackPanel>
+    </Border>
+</UserControl>
