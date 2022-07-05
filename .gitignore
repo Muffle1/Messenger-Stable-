@@ -1,0 +1,6 @@
+Messenger/obj/
+Messenger/bin/
+.vs/
+Server/bin/
+Server/obj/
+Server/databasesettings.json
